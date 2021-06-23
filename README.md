@@ -1,6 +1,6 @@
 # AutomationTest
 
-I am using the Cucumber frame work and BDD to implement this task to be redabale to any one.
+I am using the Cucumber framework and BDD to implement this task to be readable to anyone.
 
 You can check the test case in the inside Feature\SnapdealLogin.feature
 
