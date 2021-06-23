@@ -2,13 +2,15 @@ Feature: Login actions
 
 Scenario Outline: successful login with valid credentials 
 
-Given the login page is opened
-When view the login page
-And the user enter "<username>" and "<password>"
-Then the successful message is appeared
+Given The snapdeal website is opened.
+When  The user moves to the Sign In button and Hold.
+And   The User moves to the Sign In button and click.
+And   The user enters valid "Email" and click continue.
+And   The user enters the valid "Password" and click LOGIN.
+Then  the user is logged in successfully 
 
 
 Examples:
-| username | password |
-| tomsmith | SuperSecretPassword |
+| Email | Password |
+| shaimaa@test.com | P@ssw0rd |
 
