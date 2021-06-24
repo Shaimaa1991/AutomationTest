@@ -24,33 +24,6 @@ public class stepDefination {
 	driver= new FirefoxDriver();
 	}
 	
-	@Given("^the login page is opened$")
-	public void the_login_page_is_opened() throws Throwable {
-		driver.navigate().to("http://the-internet.herokuapp.com/login");
-		driver.manage().timeouts().implicitlyWait(120,TimeUnit.SECONDS);
-	}
-
-	@When("^view the login page$")
-	public void view_the_login_page() throws Throwable {
-		assertTrue(driver.getTitle().contains("The Internet"));
-	} 
-
-	@When("^the user enter \"([^\"]*)\" and \"([^\"]*)\"$")
-	public void the_user_enter_and(String username, String password) throws Throwable {
-		WebElement usernameTxtbox = driver.findElement(By.id("username"));
-		usernameTxtbox.sendKeys(username);
-		WebElement passwordTxtbox = driver.findElement(By.id("password"));
-		passwordTxtbox.sendKeys(password);
-		WebElement loginbtn= driver.findElement(By.className("radius"));
-		loginbtn.click();
-	}
-
-	@Then("^the successful message is appeared$")
-	public void the_successful_message_is_appeared() throws Throwable {
-		WebElement successheader= driver.findElement(By.xpath("//*[@id=\"content\"]/div/h2"));
-		assertTrue(successheader.isDisplayed());
-		driver.close();
-	}
 	@Given("The snapdeal website is opened.")
 	public void the_snapdeal_website_is_opened() {
 		  driver.navigate().to("https://www.snapdeal.com/");
@@ -82,21 +55,21 @@ public class stepDefination {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
-	@When("The user enters the valid {string} and click LOGIN.")
-	public void the_user_enters_the_valid_and_click_login(String Password) {
-
-		WebElement password = driver.findElement(By.xpath("//*[@id=\"userName\"]"));
-		password.sendKeys(Password);
-		WebElement LoginBtn= driver.findElement(By.id("checkUser"));
-		LoginBtn.click();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	}
-
-	@Then("the user is logged in successfully")
-	public void the_user_is_logged_in_successfully() {
-		
-	    
-	}
+//	@When("The user enters the valid {string} and click LOGIN.")
+//	public void the_user_enters_the_valid_and_click_login(String Password) {
+//
+//		WebElement password = driver.findElement(By.xpath("//*[@id=\"userName\"]"));
+//		password.sendKeys(Password);
+//		WebElement LoginBtn= driver.findElement(By.id("checkUser"));
+//		LoginBtn.click();
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//	}
+//
+//	@Then("the user is logged in successfully")
+//	public void the_user_is_logged_in_successfully() {
+//		
+//	    
+//	}
 	
 }
 
